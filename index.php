@@ -18,3 +18,5 @@ require( dirname( __FILE__ ) . '/wp-blog-header.php' );
 
 
 // hejhej från Klara
+
+// test igen
