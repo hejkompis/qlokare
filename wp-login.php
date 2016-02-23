@@ -148,6 +148,23 @@ function login_header( $title = 'Log In', $message = '', $wp_error = '' ) {
 	?>
 	</head>
 	<body class="login <?php echo esc_attr( implode( ' ', $classes ) ); ?>">
+	<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1689884244615804',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 	<div id="login">
 		<h1><a href="<?php echo esc_url( $login_header_url ); ?>" title="<?php echo esc_attr( $login_header_title ); ?>" tabindex="-1"><?php bloginfo( 'name' ); ?></a></h1>
 	<?php
