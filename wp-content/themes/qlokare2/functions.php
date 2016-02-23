@@ -7,6 +7,8 @@
  * @package Qlokare2
  */
 
+require_once plugin_dir_path( __FILE__ ) . 'functions/functions_general.php';
+
 if ( ! function_exists( 'qlokare2_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
