@@ -357,7 +357,23 @@ html {
 }
 
 body {
-	background: #fff; /* Fallback for when there is no custom background color defined. */
+	background: #cecece; /* Fallback for when there is no custom background color defined. */
+}
+
+.site-header{
+	background-color: pink;
+}
+
+.site-footer{
+	background: #eee;
+}
+
+.content-area{
+	background-color: white;
+}
+
+.widget-area{
+	background-color:skyblue ;
 }
 
 blockquote:before,
