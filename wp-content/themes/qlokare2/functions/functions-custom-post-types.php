@@ -232,3 +232,118 @@
     }
 
     add_action('save_post', 'special_save_cpt_class', 10, 3);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     *
+     * CUSTOM POST TYPE: ASSIGNMENT
+     *
+     */
+
+    /**
+     * Metabox för att koppla kurs till uppgifter.
+     *
+     * Funktion som skapar en metabox i custom post type "assignment" där vi ges möjlighet att lägga till
+     * kurs.
+     * Hör ihop med funktionerna "meta_box_for_assignments" och "special_save_cpt_assignment"
+     */
+
+    function add_meta_box_to_assignment() {
+ 
+        add_meta_box(
+            'assignment-options',
+            'Uppgifter',
+            'meta_box_for_assignment',
+            'assignment',
+            'normal',
+            'core'
+        );
+ 
+    }
+
+    /**
+     * Funktionen som läser in den specifika fil som ligger i metaboxen. Filen innehåller HTML och PHP som 
+     * skriver ut en select-box med "custom post type"-kurs
+     *
+     */
+
+    function meta_box_for_assignment($post) {
+        
+        require_once get_template_directory().'/partials/cpt-assignment-meta-box.php';
+    
+    }
+
+    add_action('add_meta_boxes', 'add_meta_box_to_assignment');
+
+    /**
+     * Extra sparfunktion till custom post type "assignment" som sparar kopplad kurs. Körs i samband med att man sparar en post.
+     *
+     */
+
+    function special_save_cpt_assignment($post_id, $post, $update) {
+
+        if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) { return; }
+
+        // verify this came from the our screen and with proper authorization,
+        // because save_post can be triggered at other times
+
+        //if ( !wp_verify_nonce( $_POST['myplugin_noncename'], plugin_basename( __FILE__ ) ) ) {    return; }
+
+        // If not correct slug
+
+        if('assignment' != $post->post_type) {
+            return;
+        }
+
+        // Save metadata
+
+        if ( isset( $_POST['cpt_courses_assignments'] ) ) {
+
+            delete_post_meta($post_id, 'cpt_courses_assignments');
+            
+            foreach($_POST['cpt_courses_assignments'] as $assignment) {
+
+                add_post_meta( 
+                    $post_id, 
+                    'cpt_courses_assignments', 
+                    sanitize_text_field( $assignment ) 
+                );
+
+            }
+
+        }
+
+    }
+
+    add_action('save_post', 'special_save_cpt_assignment', 10, 3);
