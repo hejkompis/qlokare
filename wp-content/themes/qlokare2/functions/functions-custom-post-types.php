@@ -244,6 +244,53 @@
 
 
 
+function my_custom_post_assignment() {
+        $labels = array(
+        'name' => 'Assignments', 'post type general name',
+        'singular_name' => 'Assignment', 'post type singular name',
+        'add_new' => 'Add New', 'assignment',
+        'add_new_item' => 'Add New Assignment',
+        'edit_item' => 'Edit Assignment',
+        'new_item' => 'New Assignment',
+        'all_items' => 'All Assignments',
+        'view_item' => 'View Assignment',
+        'search_items' => 'Search Assignments',
+        'not_found' => 'No assignments found',
+        'not_found_in_trash' => 'No assignments found in the Trash', 
+        'parent_item_colon' => '',
+        'menu_name' => 'Assignments'
+        );
+        $args = array(
+        'labels' => $labels,
+        'description' => 'Holds our assignments and assignment specific data',
+        'public' => true,
+        'menu_position' => 5,
+        'show_in_menu' => true,
+        'supports' => array( 'title', 'editor', 'thumbnail', 'author' ),
+        'has_archive' => true,
+        'register_meta_box_cb' => 'add_assignment_metaboxes'
+        );
+        register_post_type( 'assignment', $args ); 
+        }
+    add_action( 'init', 'my_custom_post_assignment' );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
