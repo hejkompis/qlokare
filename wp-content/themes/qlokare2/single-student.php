@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all single courses.
+ * The template for displaying all single students.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-course
  *
@@ -15,7 +15,7 @@ get_header(); ?>
 		<?php
 		while ( have_posts() ) : the_post();
 
-			get_template_part( 'template-parts/content-course', get_post_format() );
+			get_template_part( 'template-parts/content-student', get_post_format() );
 
 			the_post_navigation();
 
