@@ -327,11 +327,16 @@ a.more-link,
 .blog-menu .current-menu-item > a { color: #FF706C; }
 .blog-menu .current-menu-item a:hover { padding-left: 0; }
 
-.blog-menu .sub-menu,
+
 .blog-menu .children {
 	margin-left: 25px;
 }
-
+.sub-menu{
+	display: none;
+}
+.blog-menu:hover .sub-menu{
+	display: inline-block;
+}
 
 /* -------------------------------------------------------------------------------- */
 /*	5. Widgets

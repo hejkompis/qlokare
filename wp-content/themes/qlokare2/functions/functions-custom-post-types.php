@@ -275,43 +275,6 @@ function my_custom_post_assignment() {
     add_action( 'init', 'my_custom_post_assignment' );
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     /**
      *
      * CUSTOM POST TYPE: ASSIGNMENT
