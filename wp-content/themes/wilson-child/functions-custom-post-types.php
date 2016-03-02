@@ -236,15 +236,8 @@
 
 
 
-
-
-
-
-
-
-
-
 function my_custom_post_assignment() {
+        register_post_type( 'assignment', $args ); 
         $labels = array(
         'name' => 'Assignments', 'post type general name',
         'singular_name' => 'Assignment', 'post type singular name',
@@ -264,49 +257,15 @@ function my_custom_post_assignment() {
         'labels' => $labels,
         'description' => 'Holds our assignments and assignment specific data',
         'public' => true,
-        'menu_position' => 5,
+        'menu_position' => 25,
         'show_in_menu' => true,
-        'supports' => array( 'title', 'editor', 'thumbnail', 'author' ),
+        'supports' => array( 'title', 'editor', 'thumbnail', 'author','page-attributes' ),
         'has_archive' => true,
         'register_meta_box_cb' => 'add_assignment_metaboxes'
         );
-        register_post_type( 'assignment', $args ); 
+      
         }
-    add_action( 'init', 'my_custom_post_assignment' );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    add_action( 'init', 'my_custom_post_assignment' 1);
 
 
 
