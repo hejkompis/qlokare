@@ -265,7 +265,7 @@ function my_custom_post_assignment() {
         );
       
         }
-    add_action( 'init', 'my_custom_post_assignment' 1);
+    add_action( 'init', 'my_custom_post_assignment');
 
 
 
