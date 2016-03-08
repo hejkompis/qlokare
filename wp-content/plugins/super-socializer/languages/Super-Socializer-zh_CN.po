@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Super Socializer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-28 01:37+0530\n"
-"PO-Revision-Date: 2016-02-28 01:37+0530\n"
+"POT-Creation-Date: 2016-03-04 15:23+0530\n"
+"PO-Revision-Date: 2016-03-04 15:23+0530\n"
 "Last-Translator: The Champ <lordofthechamps@gmail.com>\n"
 "Language-Team: Heateor <hello@heateor.com>\n"
 "Language: zh_CN\n"
@@ -187,7 +187,7 @@ msgstr "大头像"
 
 #: ../helper.php:897
 #: ../admin/general_options.php:89
-#: ../admin/social_sharing.php:1785
+#: ../admin/social_sharing.php:1786
 #: ../admin/social_commenting.php:464
 #: ../admin/social_login.php:875
 #: ../admin/like_buttons.php:779
@@ -196,6 +196,11 @@ msgstr "保存更改"
 
 #: ../helper.php:942
 msgid "Please help us make the plugin better"
+msgstr ""
+
+#: ../helper.php:943
+#, php-format
+msgid "Please take a look at our <a href=\"%s\" target=\"_blank\">support documentation</a> before deactivating the plugin"
 msgstr ""
 
 #: ../helper.php:943
@@ -762,8 +767,9 @@ msgstr "页面"
 #: ../admin/social_sharing.php:1320
 #: ../admin/like_buttons.php:220
 #: ../admin/like_buttons.php:504
-msgid "Excerpts"
-msgstr "摘要"
+#, fuzzy
+msgid "Excerpts and Posts page"
+msgstr "摘录 (在主页)"
 
 #: ../admin/social_sharing.php:902
 #: ../admin/social_sharing.php:1322
@@ -1142,6 +1148,10 @@ msgstr ""
 #: ../admin/social_sharing.php:1774
 #: ../admin/like_buttons.php:767
 msgid "Why is there so much space between like buttons?"
+msgstr ""
+
+#: ../admin/social_sharing.php:1775
+msgid "Why is floating sharing bar/like buttons not appearing at homepage?"
 msgstr ""
 
 #: ../admin/social_commenting.php:13
@@ -1652,8 +1662,8 @@ msgid "If enabled and Social ID provider does not provide user's email address o
 msgstr "如果启用，当登录时如果社会化ID提供商不提供或支持用户的电子邮件地址，用户将被要求提供他/她的电子邮件地址。否则，将产生一个虚拟的电子邮件"
 
 #: ../admin/social_login.php:614
-msgid "Send username-password after user registration"
-msgstr "用户注册后发送的用户名，密码"
+msgid "Send post-registration email to set account password"
+msgstr ""
 
 #: ../admin/social_login.php:624
 msgid "If enabled, an email will be sent to user after registration through Social Login, regarding his/her login credentials (username-password to be able to login via traditional login form)"
@@ -1924,11 +1934,11 @@ msgstr "喜欢按钮简码 & 小部件"
 msgid "Enable Social Login from \"Basic Configuration\" section at \"Super Socializer > Social Login\" page in admin panel"
 msgstr "在管理员控制面板中的”Super Socializer > 社会登录”页，从”基本配置”启用社会化登录。"
 
-#: ../inc/social_sharing.php:721
+#: ../inc/social_sharing.php:733
 msgid "Invalid request"
 msgstr "无效请求。"
 
-#: ../inc/social_sharing.php:728
+#: ../inc/social_sharing.php:740
 msgid "Providers not selected"
 msgstr "未选定的供应商"
 
@@ -2065,8 +2075,11 @@ msgstr "立式浮动喜欢按钮小工具。让您的网站用户在社交网络
 msgid "Make sure \"Vertical Like Buttons\" are enabled from \"Super Socializer > Like Buttons\" page."
 msgstr "确保垂直“喜欢按钮”从“Super Socializer“>喜欢按钮”页面启用。"
 
-#~ msgid "Excerpts (at Homepage)"
-#~ msgstr "摘录 (在主页)"
+#~ msgid "Excerpts"
+#~ msgstr "摘要"
+
+#~ msgid "Send username-password after user registration"
+#~ msgstr "用户注册后发送的用户名，密码"
 
 #~ msgid "Login options"
 #~ msgstr "登陸選項"

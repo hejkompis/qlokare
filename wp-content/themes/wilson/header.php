@@ -18,6 +18,7 @@
 			<div class="sidebar">
 							
 				<div class="blog-header">
+
 				
 					<?php if ( get_theme_mod( 'wilson_logo' ) ) : ?>
 					
@@ -59,7 +60,7 @@
 				<div class="blog-menu">
 			
 					<ul class="navigation">
-					
+										
 						<?php if ( has_nav_menu( 'primary' ) ) {
 																			
 							wp_nav_menu( array( 
@@ -79,9 +80,40 @@
 								'title_li'  => ''
 							
 							));
+
 							
+
 						} ?>
-												
+
+						<a href="<?php echo get_edit_user_link(); ?>">Redigera din Profil</a>
+
+						<?php
+
+						$args = array( 'post_type' => 'courses', 'orderby'=> 'title', 'order' => 'ASC','post_parent' => '0',);
+        				$loop = new WP_Query( $args );
+        				while ( $loop->have_posts() ) { 
+
+        					 	$loop->the_post();?>
+
+       
+
+	        			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+
+	        			<?php
+	        			
+                		$children = get_children($post->ID);
+
+               		foreach ($children as $child) {
+                	?>
+
+                	<a href="<?php echo get_permalink($child->ID); ?>" title="<?php the_title_attribute(); ?>"> - <?php echo $child->post_title; ?></a>
+
+               <?php } ?>
+
+                
+						
+						<?php } // end of the loop. ?>
+					 
 					 </ul>
 					 
 					 <div class="clear"></div>

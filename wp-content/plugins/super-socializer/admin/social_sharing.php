@@ -897,7 +897,7 @@
 							<input id="the_champ_page" name="the_champ_sharing[page]" type="checkbox" <?php echo isset( $theChampSharingOptions['page'] ) ? 'checked = "checked"' : '';?> value="1" />
 							<label for="the_champ_page"><?php _e('Pages', 'Super-Socializer' ) ?></label><br/>
 							<input id="the_champ_excerpt" name="the_champ_sharing[excerpt]" type="checkbox" <?php echo isset( $theChampSharingOptions['excerpt'] ) ? 'checked = "checked"' : '';?> value="1" />
-							<label for="the_champ_excerpt"><?php _e('Excerpts', 'Super-Socializer' ) ?></label><br/>
+							<label for="the_champ_excerpt"><?php _e('Excerpts and Posts page', 'Super-Socializer' ) ?></label><br/>
 							<input id="the_champ_category" name="the_champ_sharing[category]" type="checkbox" <?php echo isset( $theChampSharingOptions['category'] ) ? 'checked = "checked"' : '';?> value="1" />
 							<label for="the_champ_category"><?php _e('Category Archives', 'Super-Socializer' ) ?></label><br/>
 							<input id="the_champ_archive" name="the_champ_sharing[archive]" type="checkbox" <?php echo isset( $theChampSharingOptions['archive'] ) ? 'checked = "checked"' : '';?> value="1" />
@@ -1317,7 +1317,7 @@
 							<input id="the_champ_vertical_page" name="the_champ_sharing[vertical_page]" type="checkbox" <?php echo isset( $theChampSharingOptions['vertical_page'] ) ? 'checked = "checked"' : '';?> value="1" />
 							<label for="the_champ_vertical_page"><?php _e('Pages', 'Super-Socializer' ) ?></label><br/>
 							<input id="the_champ_vertical_excerpt" name="the_champ_sharing[vertical_excerpt]" type="checkbox" <?php echo isset( $theChampSharingOptions['vertical_excerpt'] ) ? 'checked = "checked"' : '';?> value="1" />
-							<label for="the_champ_vertical_excerpt"><?php _e('Excerpts', 'Super-Socializer' ) ?></label><br/>
+							<label for="the_champ_vertical_excerpt"><?php _e('Excerpts and Posts page', 'Super-Socializer' ) ?></label><br/>
 							<input id="the_champ_vertical_category" name="the_champ_sharing[vertical_category]" type="checkbox" <?php echo isset( $theChampSharingOptions['vertical_category'] ) ? 'checked = "checked"' : '';?> value="1" />
 							<label for="the_champ_vertical_category"><?php _e('Category Archives', 'Super-Socializer' ) ?></label><br/>
 							<input id="the_champ_vertical_archive" name="the_champ_sharing[vertical_archive]" type="checkbox" <?php echo isset( $theChampSharingOptions['vertical_archive'] ) ? 'checked = "checked"' : '';?> value="1" />
@@ -1772,6 +1772,7 @@
 						<p><a href="http://support.heateor.com/how-to-hide-arrow-after-floating-sharing-bar" target="_blank"><?php _e( 'How to hide arrow after floating sharing bar?', 'Super-Socializer' ) ?></a></p>
 						<p><a href="http://support.heateor.com/why-are-share-counts-not-updating" target="_blank"><?php _e( 'Why are Share Counts Not Updating?', 'Super-Socializer' ) ?></a></p>
 						<p><a href="http://support.heateor.com/why-is-there-so-much-space-between-like-buttons" target="_blank"><?php _e( 'Why is there so much space between like buttons?', 'Super-Socializer' ) ?></a></p>
+						<p><a href="http://support.heateor.com/why-is-floating-share-like-button-not-appearing-at-homepage" target="_blank"><?php _e( 'Why are floating sharing/like buttons not appearing at homepage?', 'Super-Socializer' ) ?></a></p>
 					</div>
 				</div>
 

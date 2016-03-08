@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Super Socializer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-28 01:38+0530\n"
-"PO-Revision-Date: 2016-02-28 01:38+0530\n"
+"POT-Creation-Date: 2016-03-04 15:21+0530\n"
+"PO-Revision-Date: 2016-03-04 15:21+0530\n"
 "Last-Translator: The Champ <lordofthechamps@gmail.com>\n"
 "Language-Team: Heateor <hello@heateor.com>\n"
 "Language: \n"
@@ -187,7 +187,7 @@ msgstr ""
 
 #: ../helper.php:897
 #: ../admin/general_options.php:89
-#: ../admin/social_sharing.php:1785
+#: ../admin/social_sharing.php:1786
 #: ../admin/social_commenting.php:464
 #: ../admin/social_login.php:875
 #: ../admin/like_buttons.php:779
@@ -196,6 +196,11 @@ msgstr ""
 
 #: ../helper.php:942
 msgid "Please help us make the plugin better"
+msgstr ""
+
+#: ../helper.php:943
+#, php-format
+msgid "Please take a look at our <a href=\"%s\" target=\"_blank\">support documentation</a> before deactivating the plugin"
 msgstr ""
 
 #: ../helper.php:943
@@ -761,7 +766,7 @@ msgstr ""
 #: ../admin/social_sharing.php:1320
 #: ../admin/like_buttons.php:220
 #: ../admin/like_buttons.php:504
-msgid "Excerpts"
+msgid "Excerpts and Posts page"
 msgstr ""
 
 #: ../admin/social_sharing.php:902
@@ -1140,6 +1145,10 @@ msgstr ""
 #: ../admin/social_sharing.php:1774
 #: ../admin/like_buttons.php:767
 msgid "Why is there so much space between like buttons?"
+msgstr ""
+
+#: ../admin/social_sharing.php:1775
+msgid "Why is floating sharing bar/like buttons not appearing at homepage?"
 msgstr ""
 
 #: ../admin/social_commenting.php:13
@@ -1645,7 +1654,7 @@ msgid "If enabled and Social ID provider does not provide user's email address o
 msgstr ""
 
 #: ../admin/social_login.php:614
-msgid "Send username-password after user registration"
+msgid "Send post-registration email to set account password"
 msgstr ""
 
 #: ../admin/social_login.php:624
@@ -1917,11 +1926,11 @@ msgstr ""
 msgid "Enable Social Login from \"Basic Configuration\" section at \"Super Socializer > Social Login\" page in admin panel"
 msgstr ""
 
-#: ../inc/social_sharing.php:721
+#: ../inc/social_sharing.php:733
 msgid "Invalid request"
 msgstr ""
 
-#: ../inc/social_sharing.php:728
+#: ../inc/social_sharing.php:740
 msgid "Providers not selected"
 msgstr ""
 

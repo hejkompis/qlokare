@@ -331,10 +331,11 @@ a.more-link,
 .blog-menu .children {
 	margin-left: 25px;
 }
-.sub-menu{
+.sub-menu {
 	display: none;
 }
-.blog-menu:hover .sub-menu{
+
+.blog-menu:hover .sub-menu {
 	display: inline-block;
 }
 

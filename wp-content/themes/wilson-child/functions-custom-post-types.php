@@ -2,7 +2,7 @@
 
     /**
      *
-     * CUSTOM POST TYPE: TEACHER
+     * CUSTOM POST TYPE: COURSES
      *
      */
 
@@ -13,6 +13,39 @@
      * kursansvarig lärare.
      * Hör ihop med funktionerna "meta_box_for_courses" och "special_save_cpt_course"
      */
+
+    function my_custom_post_courses() {
+        register_post_type( 'course', $args ); 
+        $labels = array(
+        'name' => 'courses', 'post type general name',
+        'singular_name' => 'course', 'post type singular name',
+        'add_new' => 'Add New', 'course',
+        'add_new_item' => 'Add New course',
+        'edit_item' => 'Edit course',
+        'new_item' => 'New course',
+        'all_items' => 'All course',
+        'view_item' => 'View course',
+        'search_items' => 'Search course',
+        'not_found' => 'No courses found',
+        'not_found_in_trash' => 'No courses found in the Trash', 
+        'parent_item_colon' => '',
+        'menu_name' => 'courses'
+        );
+        $args = array(
+        'labels' => $labels,
+        'description' => 'Holds our courses and course specific data',
+        'public' => true,
+        'menu_position' => 20,
+        'show_in_menu' => true,
+        'hierarchical' => true,
+        'supports' => array( 'title', 'editor', 'thumbnail', 'author','page-attributes' ),
+        'has_archive' => true,
+        'register_meta_box_cb' => 'add_course_metaboxes'
+        );
+      
+        }
+    add_action( 'init', 'my_custom_post_courses');
+
 
 	function add_meta_box_to_courses() {
  
@@ -89,6 +122,38 @@
      * Hör ihop med funktionerna "meta_box_for_courses" och "special_save_cpt_course"
      */
 
+    function my_custom_post_student() {
+        register_post_type( 'student', $args ); 
+        $labels = array(
+        'name' => 'students', 'post type general name',
+        'singular_name' => 'student', 'post type singular name',
+        'add_new' => 'Add New', 'student',
+        'add_new_item' => 'Add New student',
+        'edit_item' => 'Edit student',
+        'new_item' => 'New student',
+        'all_items' => 'All student',
+        'view_item' => 'View student',
+        'search_items' => 'Search student',
+        'not_found' => 'No students found',
+        'not_found_in_trash' => 'No students found in the Trash', 
+        'parent_item_colon' => '',
+        'menu_name' => 'students'
+        );
+        $args = array(
+        'labels' => $labels,
+        'description' => 'Holds our students and student specific data',
+        'public' => true,
+        'menu_position' => 20,
+        'show_in_menu' => true,
+        'hierarchical' => true,
+        'supports' => array( 'title', 'editor', 'thumbnail', 'author','page-attributes' ),
+        'has_archive' => true,
+        'register_meta_box_cb' => 'add_student_metaboxes'
+        );
+      
+        }
+    add_action( 'init', 'my_custom_post_assignment');
+
     function add_meta_box_to_student() {
  
         add_meta_box(
@@ -164,6 +229,38 @@
      * Hör ihop med funktionerna "meta_box_for_courses" och "special_save_cpt_course"
      */
 
+    function my_custom_post_class() {
+        register_post_type( 'class', $args ); 
+        $labels = array(
+        'name' => 'Assignments', 'post type general name',
+        'singular_name' => 'class', 'post type singular name',
+        'add_new' => 'Add New', 'class',
+        'add_new_item' => 'Add New class',
+        'edit_item' => 'Edit class',
+        'new_item' => 'New class',
+        'all_items' => 'All class',
+        'view_item' => 'View class',
+        'search_items' => 'Search class',
+        'not_found' => 'No assignments found',
+        'not_found_in_trash' => 'No assignments found in the Trash', 
+        'parent_item_colon' => '',
+        'menu_name' => 'Assignments'
+        );
+        $args = array(
+        'labels' => $labels,
+        'description' => 'Holds our classes and class specific data',
+        'public' => true,
+        'menu_position' => 21,
+        'show_in_menu' => true,
+        'hierarchical' => true,
+        'supports' => array( 'title', 'editor', 'thumbnail', 'author','page-attributes' ),
+        'has_archive' => true,
+        'register_meta_box_cb' => 'add_class_metaboxes'
+        );
+      
+        }
+        add_action( 'init', 'my_custom_post_class');
+
     function add_meta_box_to_class() {
  
         add_meta_box(
@@ -236,8 +333,24 @@
 
 
 
-function my_custom_post_assignment() {
-        register_post_type( 'assignment', $args ); 
+
+
+    /**
+     *
+     * CUSTOM POST TYPE: ASSIGNMENT
+     *
+     */
+
+    /**
+     * Metabox för att koppla kurs till uppgifter.
+     *
+     * Funktion som skapar en metabox i custom post type "assignment" där vi ges möjlighet att lägga till
+     * kurs.
+     * Hör ihop med funktionerna "meta_box_for_assignments" och "special_save_cpt_assignment"
+     */
+
+    function my_custom_post_assignment() {
+        register_post_type( 'class', $args ); 
         $labels = array(
         'name' => 'Assignments', 'post type general name',
         'singular_name' => 'Assignment', 'post type singular name',
@@ -257,8 +370,9 @@ function my_custom_post_assignment() {
         'labels' => $labels,
         'description' => 'Holds our assignments and assignment specific data',
         'public' => true,
-        'menu_position' => 25,
+        'menu_position' => 20,
         'show_in_menu' => true,
+        'hierarchical' => true,
         'supports' => array( 'title', 'editor', 'thumbnail', 'author','page-attributes' ),
         'has_archive' => true,
         'register_meta_box_cb' => 'add_assignment_metaboxes'
@@ -269,21 +383,6 @@ function my_custom_post_assignment() {
 
 
 
-
-
-    /**
-     *
-     * CUSTOM POST TYPE: ASSIGNMENT
-     *
-     */
-
-    /**
-     * Metabox för att koppla kurs till uppgifter.
-     *
-     * Funktion som skapar en metabox i custom post type "assignment" där vi ges möjlighet att lägga till
-     * kurs.
-     * Hör ihop med funktionerna "meta_box_for_assignments" och "special_save_cpt_assignment"
-     */
 
     function add_meta_box_to_assignment() {
  

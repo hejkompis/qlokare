@@ -217,7 +217,7 @@
 							<input id="the_champ_counter_page" name="the_champ_counter[page]" type="checkbox" <?php echo isset($theChampCounterOptions['page']) ? 'checked = "checked"' : '';?> value="1" />
 							<label for="the_champ_counter_page"><?php _e('Pages', 'Super-Socializer') ?></label><br/>
 							<input id="the_champ_counter_excerpt" name="the_champ_counter[excerpt]" type="checkbox" <?php echo isset($theChampCounterOptions['excerpt']) ? 'checked = "checked"' : '';?> value="1" />
-							<label for="the_champ_counter_excerpt"><?php _e('Excerpts', 'Super-Socializer') ?></label><br/>
+							<label for="the_champ_counter_excerpt"><?php _e('Excerpts and Posts page', 'Super-Socializer') ?></label><br/>
 							<input id="the_champ_counter_category" name="the_champ_counter[category]" type="checkbox" <?php echo isset($theChampCounterOptions['category']) ? 'checked = "checked"' : '';?> value="1" />
 							<label for="the_champ_counter_category"><?php _e('Category Archives', 'Super-Socializer') ?></label><br/>
 							<input id="the_champ_counter_archive" name="the_champ_counter[archive]" type="checkbox" <?php echo isset($theChampCounterOptions['archive']) ? 'checked = "checked"' : '';?> value="1" />
@@ -501,7 +501,7 @@
 							<input id="the_champ_counter_vertical_page" name="the_champ_counter[vertical_page]" type="checkbox" <?php echo isset($theChampCounterOptions['vertical_page']) ? 'checked = "checked"' : '';?> value="1" />
 							<label for="the_champ_counter_vertical_page"><?php _e('Pages', 'Super-Socializer') ?></label><br/>
 							<input id="the_champ_counter_vertical_excerpt" name="the_champ_counter[vertical_excerpt]" type="checkbox" <?php echo isset($theChampCounterOptions['vertical_excerpt']) ? 'checked = "checked"' : '';?> value="1" />
-							<label for="the_champ_counter_vertical_excerpt"><?php _e('Excerpts', 'Super-Socializer') ?></label><br/>
+							<label for="the_champ_counter_vertical_excerpt"><?php _e('Excerpts and Posts page', 'Super-Socializer') ?></label><br/>
 							<input id="the_champ_counter_vertical_category" name="the_champ_counter[vertical_category]" type="checkbox" <?php echo isset($theChampCounterOptions['vertical_category']) ? 'checked = "checked"' : '';?> value="1" />
 							<label for="the_champ_counter_vertical_category"><?php _e('Category Archives', 'Super-Socializer') ?></label><br/>
 							<input id="the_champ_counter_vertical_archive" name="the_champ_counter[vertical_archive]" type="checkbox" <?php echo isset($theChampCounterOptions['vertical_archive']) ? 'checked = "checked"' : '';?> value="1" />
@@ -765,6 +765,7 @@
 					<h3><label><?php _e('FAQ', 'Super-Socializer' ) ?></label></h3>
 					<div class="inside faq">
 						<p><a href="http://support.heateor.com/why-is-there-so-much-space-between-like-buttons" target="_blank"><?php _e( 'Why is there so much space between like buttons?', 'Super-Socializer' ) ?></a></p>
+						<p><a href="http://support.heateor.com/why-is-floating-share-like-button-not-appearing-at-homepage" target="_blank"><?php _e( 'Why are floating sharing/like buttons not appearing at homepage?', 'Super-Socializer' ) ?></a></p>
 					</div>
 				</div>
 

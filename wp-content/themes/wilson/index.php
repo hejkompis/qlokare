@@ -21,7 +21,7 @@
 		<?php endif; ?>
 	
 		<div class="posts">
-				
+			<?php query_posts( array( ‘post_type’ => array(‘course’ , ‘post’ ) ) ); ?>	
 	    	<?php while (have_posts()) : the_post(); ?>
 	    	
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -38,15 +38,7 @@
 	
 	<?php if ( $wp_query->max_num_pages > 1 ) : ?>
 	
-		<div class="archive-nav">
-					
-			<?php echo get_next_posts_link( __('&laquo; Older<span> posts</span>', 'wilson')); ?>
-						
-			<?php echo get_previous_posts_link( __('Newer<span> posts</span> &raquo;', 'wilson')); ?>
-			
-			<div class="clear"></div>
-			
-		</div> <!-- /post-nav archive-nav -->
+		
 	
 	<?php endif; ?>
 			              	        
