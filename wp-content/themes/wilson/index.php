@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
 <div class="content">
+
 																	                    
 	<?php if (have_posts()) : ?>
 	
@@ -21,7 +22,7 @@
 		<?php endif; ?>
 	
 		<div class="posts">
-			<?php query_posts( array( ‘post_type’ => array(‘course’ , ‘post’ ) ) ); ?>	
+			<?php query_posts( array( 'post_type' => array('post'), 'cat' => '15') ); ?>	
 	    	<?php while (have_posts()) : the_post(); ?>
 	    	
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

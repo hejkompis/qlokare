@@ -1,7 +1,4 @@
-<?php
-
-
-
+<?php 
 
 // Creates Courses Custom Post Type
 
