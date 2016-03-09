@@ -96,13 +96,6 @@
 
 						} ?>
 
-<<<<<<< HEAD
-						<a href="<?php echo get_edit_user_link(); ?>">Redigera din Profil</a>
-						<p style="color: orange;">---------------</p>
-=======
-						
-
->>>>>>> ce455df9f19992347b5ac43fbe873a7b81ab687b
 						<?php
 
 						if (user_logged_in) {
@@ -130,12 +123,7 @@
                      <?php } ?>
 
                 
-						
-<<<<<<< HEAD
-						<?php } // end of the loop. ?>
-						
-					 <p style="color: orange;">---------------</p>
-=======
+
 						<?php } ;
 
 					     }
@@ -153,7 +141,6 @@
 
 
 					 
->>>>>>> ce455df9f19992347b5ac43fbe873a7b81ab687b
 					 </ul>
 					 
 					 <div class="clear"></div>
