@@ -22,23 +22,15 @@
 		<?php endif; ?>
 	
 		<div class="posts">
-          
-          <?php
+         
 
-		if (user_logged_in) {
-			 query_posts( array( 'post_type' => array('post'), 'cat' => '15') ); 
-	    	 while (have_posts()) : the_post();
-	    	 endwhile ;
-
-
-	    	 else {
-
-	    	 	the_permalink('ID' => '180');
-
-	    	 }
+		
+			 <?php query_posts( array( 'post_type' => array('post'), 'cat' => '15') ); ?>
+	    	 <?php while (have_posts()) : the_post(); ?>
+	    	 
 
 
-	    	 ?>
+	    	 
 	    	
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	    	

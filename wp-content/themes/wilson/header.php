@@ -61,15 +61,7 @@
 			
 					<ul class="navigation">
 
-                         <?php 
-                         if (user_logged_in) {
-					  echo '<a href="/wp-login.php?action=logout"> Logout </a>';
-					}
-					  else {
-					  echo '<a href="/wp-login.php"> Login </a>';
-					  }
-
-					      ?>
+                         
 
 										
 						<?php if ( has_nav_menu( 'primary' ) ) {
@@ -95,6 +87,7 @@
 							
 
 						} ?>
+						<p style="color: orange;">------------</p>
 
 						<?php
 
@@ -140,7 +133,8 @@
 
 
 
-					 
+					 <p style="color: orange;">------------</p>
+
 					 </ul>
 					 
 					 <div class="clear"></div>
