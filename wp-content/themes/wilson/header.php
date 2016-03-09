@@ -86,7 +86,7 @@
 						} ?>
 
 						<a href="<?php echo get_edit_user_link(); ?>">Redigera din Profil</a>
-
+						<p style="color: orange;">---------------</p>
 						<?php
 
 						$args = array( 'post_type' => 'courses', 'orderby'=> 'title', 'order' => 'ASC','post_parent' => '0',);
@@ -113,7 +113,8 @@
                 
 						
 						<?php } // end of the loop. ?>
-					 
+						
+					 <p style="color: orange;">---------------</p>
 					 </ul>
 					 
 					 <div class="clear"></div>
