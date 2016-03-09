@@ -60,6 +60,17 @@
 				<div class="blog-menu">
 			
 					<ul class="navigation">
+
+                         <?php 
+                         if (user_logged_in) {
+					  echo '<a href="/wp-login.php?action=logout"> Logout </a>';
+					}
+					  else {
+					  echo '<a href="/wp-login.php"> Login </a>';
+					  }
+
+					      ?>
+
 										
 						<?php if ( has_nav_menu( 'primary' ) ) {
 																			
@@ -85,9 +96,12 @@
 
 						} ?>
 
-						<a href="<?php echo get_edit_user_link(); ?>">Redigera din Profil</a>
+						
 
 						<?php
+
+						if (user_logged_in) {
+  
 
 						$args = array( 'post_type' => 'courses', 'orderby'=> 'title', 'order' => 'ASC','post_parent' => '0',);
         				$loop = new WP_Query( $args );
@@ -108,11 +122,26 @@
 
                 	<a href="<?php echo get_permalink($child->ID); ?>" title="<?php the_title_attribute(); ?>"> - <?php echo $child->post_title; ?></a>
 
-               <?php } ?>
+                     <?php } ?>
 
                 
 						
-						<?php } // end of the loop. ?>
+						<?php } ;
+
+					     }
+
+						// end of the loop. 
+
+					      else {
+                            
+
+                        }
+
+						?>
+
+
+
+
 					 
 					 </ul>
 					 
