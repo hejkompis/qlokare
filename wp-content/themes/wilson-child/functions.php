@@ -1,5 +1,9 @@
 <?php 
 
+function my_home_category( $query ) 
+{ if ( $query->is_home() && $query->is_main_query() ) { $query->set( 'cat', '15'); } } 
+add_action( 'pre_get_posts', 'my_home_category' );
+
 // Creates Courses Custom Post Type
 
 function Courses_init() {
