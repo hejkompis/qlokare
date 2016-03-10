@@ -91,53 +91,60 @@
 
 						<?php
 
-						if (user_logged_in) {
-  
-
+						
+  						// skriver endast ut undersidor för aktuell "active page".
+						$active_page = url_to_postid($wp->request);
 						$args = array( 'post_type' => 'courses', 'orderby'=> 'title', 'order' => 'ASC','post_parent' => '0',);
         				$loop = new WP_Query( $args );
-        				while ( $loop->have_posts() ) { 
+        					while ( $loop->have_posts() ) { 
 
         					 	$loop->the_post();?>
 
        
 
-	        			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+	        				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 
-	        			<?php
+
+
+	        				<?
+
+	       				
+	        				// När aktuell sida är aktiv hämta föräldern för denna.
+	        			if($active_page == $post->ID || $post->ID == wp_get_post_parent_id($active_page)){
 	        			
                 		$children = get_children($post->ID);
 
-               		foreach ($children as $child) {
-                	?>
+               				foreach ($children as $child) {
+                			?>
 
-                	<a href="<?php echo get_permalink($child->ID); ?>" title="<?php the_title_attribute(); ?>"> - <?php echo $child->post_title; ?></a>
+                			<a href="<?php echo get_permalink($child->ID); ?>" title="<?php the_title_attribute(); ?>"> - <?php echo $child->post_title; ?></a>
 
-                     <?php } ?>
+                     		<?php 
+                     		} 
+                 		} ;
 
-                
-
-						<?php } ;
-
-					     }
-
-						// end of the loop. 
-
-					      else {
-                            
-
-                        }
+					    }
 
 						?>
 
+					<!-- <?php/* $argslist = array(
+					    'child_of'     => 0,
+					    'sort_order'   => 'ASC',
+					    'sort_column'  => 'post_title',
+					    'post_type' => 'courses',
+					    'suppress_filters' => false,
+					    'hierarchical' => 1,
+					);					 
 
-
-
-					 <p style="color: orange;">------------</p>
-
-					 </ul>
-					 
-					 <div class="clear"></div>
+					 ?>
+					   </br>
+					  <p style="color: orange;">Välj uppgift från kurs:</p>
+					  </br>
+					  <form action="<?php bloginfo('url'); ?>" method="get">
+   						<?php wp_dropdown_pages($argslist);  */?>
+   						<input type="submit" name="submit" value="Välj" />
+   						</form> -->
+   						
 					 
 				</div> <!-- /blog-menu -->
 				
