@@ -14,11 +14,12 @@ function qlokare_gradings_getcolor(){
 
 
 function qlokare_gradings_admin_page(){
-	if($_POST['qlokare_gradings_changecolor_form'] == 'true'){
+	if ($_POST['qlokare_gradings_changecolor_form'] == 'true'){
 		// om formuläret är postat
 		$color = $_POST['qlokare_gradings_color']; // bör tvättas och kollas!
 		update_option('qlokare_gradings_color', $color);
-	}else{
+	}
+	else {
 		// om sidan laddas utan att formuläret är postat
 		$color = get_option('qlokare_gradings_color');
 	}
@@ -26,17 +27,10 @@ function qlokare_gradings_admin_page(){
 	echo "<div class='wrap'>";
 	echo "<h2>" . __("Qlokare Gradings", 'qlokare_gradings') . "</h2>";
 	echo "<hr>";
-	echo "
-		<form method='post' action =''>
-			<input type='text' name='qlokare_gradings_color' value='$color'>
-			<input type='submit' value='" . __("Update settings", "qlokare_gradings") . "'>
-			<input type='hidden' name='qlokare_gradings_changecolor_form' value='true'>
-		</form>
-	";
 	echo '</div>
 	<div>
 		<form method="post" action="">
-			<p>Get:</p>
+			<b><p>Get:</p></b>
 			<label for="student_id">Student:</label>
 			<input type="text" name="student_id">
 			<label for="course_id">Course:</label>
@@ -45,7 +39,7 @@ function qlokare_gradings_admin_page(){
 			<input type="submit">
 		</form>
 		<form method="post" action="">
-		<p>New Grade Student in Course:</p>
+		<b><p>New Grade Student in Course:</p></b>
 			<label for="student">Student:</label>
 			<input type="text" name="student_id">
 			<label for="course">Course:</label>
@@ -56,7 +50,7 @@ function qlokare_gradings_admin_page(){
 			<input type="submit">
 		</form>
 		<form method="post" action="">
-			<p>Update grade for student in course:</p>
+			<b><p>Update grade for student in course:</p></b>
 			<label for="id">Grade id:</label>
 			<input type="text" name="id">
 			<label for="student">Student:</label>
@@ -69,7 +63,7 @@ function qlokare_gradings_admin_page(){
 			<input type="submit">
 		</form>
 		<form method="post" action="">
-			<p>Delete: </p>
+			<b><p>Delete: </p></b>
 			<label for="id">ID:</label>
 			<input type	="text" name="id">
 			<input type="hidden" name="deleteGrade"></input>
@@ -80,12 +74,13 @@ function qlokare_gradings_admin_page(){
 			if (isset($_POST)) {
 				$respons = requestAPI();
 				var_dump($respons);
+				// PUT FEEDBACK HTML and GET results here based on the response from API
 				// FOR USER 
-	//if sats
-		//respons status okej
-		//html fedback
-		//else
-			//html fedback
+				// if sats
+				// respons status okej
+				// html fedback
+				// else
+				// html fedback
 			}
 		
 	echo '</div>';
