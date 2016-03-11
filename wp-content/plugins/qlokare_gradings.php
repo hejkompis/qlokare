@@ -99,11 +99,7 @@ add_action('admin_menu', 'qlokare_gradings_admin_menu');
 
 
 
-
-
-
-
-// _____________ API CLIENT: ______________
+/* _____________ API CLIENT FUNCTIONS _____________*/
 
 function requestAPI(){
 
@@ -146,8 +142,10 @@ function postGrade(){
 	$data = $_POST;
 	//Call API with URL, HTTP method and data
 	$json = call("http://192.168.33.14/api/?/grades/", "post", $data);
-	$outputHTML = getHTML($json);
-	return $outputHTML;
+	
+	//Return respons
+	$respons = json_decode($json);
+	return $respons;
 }
 
 function putGrade(){
@@ -155,12 +153,18 @@ function putGrade(){
 	// kollar databasen genom fråga till API:
 	if(empty($data)) {
 		$json = call("http://192.168.33.14/api/?/grades/", "get", $data);
-		$outputHTML = getHTML($json);
-		return $outputHTML;
-	}else{
+		
+		//Return respons
+		$respons = json_decode($json);
+		return $respons;
+	}
+	
+	else{
 		$json = call("http://192.168.33.14/api/?/grades/", "put", $data);
-		$outputHTML = getHTML($json);
-		return $outputHTML;
+		
+		//Return respons
+		$respons = json_decode($json);
+		return $respons;
 	}
 }
 
@@ -169,45 +173,49 @@ function deleteGrade(){
 	// kollar databasen genom fråga till API:
 	if(empty($data)) {
 		$json = call("http://192.168.33.14/api/?/grades/", "get", $data);
-		$outputHTML = getHTML($json);
-		return $outputHTML;
-	}else{
+		
+		//Return respons
+		$respons = json_decode($json);
+		return $respons;
+	}
+	
+	else{
 		$json = call("http://192.168.33.14/api/?/grades/", "delete", $data);
-		$outputHTML = getHTML($json);
-		return $outputHTML;
+		
+		//Return respons
+		$respons = json_decode($json);
+		return $respons;
 	}
 }
 
 function call($url, $method = "get", $data = []){
-$ch = curl_init();
+	$ch = curl_init();
 
-curl_setopt($ch, CURLOPT_URL, $url); 
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+	curl_setopt($ch, CURLOPT_URL, $url); 
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
-//ska det stå såhär om det är en DELETE method
-switch ($method) {
-	case 'post':
-		curl_setopt($ch, CURLOPT_POST, 1);
-		//har ska man ändra method baserat på vilken http-metod som angivits.
-		curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-	break;
+	switch ($method) {
+		case 'post':
+			curl_setopt($ch, CURLOPT_POST, 1);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+		break;
 
-	case 'put':
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
-    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
-	break;
+		case 'put':
+		    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+		    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+		break;
 
-	case 'delete':
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
-	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'DELETE');
-    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
-	break;
-}
-echo $respons = curl_exec($ch); 
-curl_close($ch);
+		case 'delete':
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'DELETE');
+		    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+		break;
+	}
+	echo $respons = curl_exec($ch); 
+	curl_close($ch);
 
-return $respons;
+	return $respons;
 }
 
 ?>
