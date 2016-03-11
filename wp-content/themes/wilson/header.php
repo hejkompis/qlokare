@@ -94,7 +94,11 @@
 						
   						// skriver endast ut undersidor för aktuell "active page".
 						$active_page = url_to_postid($wp->request);
+
+						// sätter $args som en array av custom post typen courses, sorterar dem och sätter enbart visning av föräldrar med 'post_parent' => '0', allt över noll är barn.
 						$args = array( 'post_type' => 'courses', 'orderby'=> 'title', 'order' => 'ASC','post_parent' => '0',);
+        				
+						//Vanlig post loop.
         				$loop = new WP_Query( $args );
         					while ( $loop->have_posts() ) { 
 
@@ -112,6 +116,8 @@
 	        				// När aktuell sida är aktiv hämta föräldern för denna.
 	        			if($active_page == $post->ID || $post->ID == wp_get_post_parent_id($active_page)){
 	        			
+
+	        			//loopar ut barnen
                 		$children = get_children($post->ID);
 
                				foreach ($children as $child) {

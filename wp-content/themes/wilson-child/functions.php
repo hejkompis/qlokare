@@ -4,11 +4,13 @@ function my_home_category( $query )
 { if ( $query->is_home() && $query->is_main_query() ) { $query->set( 'cat', '15'); } } 
 add_action( 'pre_get_posts', 'my_home_category' );
 
-function user_logged_in() {
+/*function user_logged_in() {
     $user = wp_get_current_user();
  
     return $user->exists();
-}
+}/*/
+
+
 
 // Creates Courses Custom Post Type
 
